@@ -18,10 +18,11 @@ export function LoginPage() {
           backgroundColor: 'white',
           borderRadius: 16,
           boxShadow: '0 8px 32px rgba(107, 45, 139, 0.12), 0 2px 8px rgba(107, 45, 139, 0.08)',
-          padding: '48px 40px',
-          width: '100%',
+          padding: 'clamp(24px, 5vw, 48px) clamp(20px, 4vw, 40px)',
+          width: 'calc(100% - 32px)',
           maxWidth: 440,
-          margin: '0 16px',
+          margin: '16px',
+          boxSizing: 'border-box',
         }}
       >
         <LoginForm />
