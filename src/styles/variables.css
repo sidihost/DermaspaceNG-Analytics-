@@ -1,4 +1,7 @@
 html body {
-  --primary-color: #147af3;
+  --primary-color: #6b2d8b;
+  --primary-color-light: #8b4ca8;
+  --primary-color-dark: #4a1d61;
   --primary-font-color: var(--light-color);
+  --accent-color: #9b4dca;
 }

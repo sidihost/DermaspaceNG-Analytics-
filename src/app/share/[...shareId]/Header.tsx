@@ -1,17 +1,20 @@
-import { Icon, Row, Text, ThemeButton } from '@umami/react-zen';
+import { Row, Text, ThemeButton } from '@umami/react-zen';
 import { LanguageButton } from '@/components/input/LanguageButton';
 import { PreferencesButton } from '@/components/input/PreferencesButton';
-import { Logo } from '@/components/svg';
 
 export function Header() {
   return (
     <Row as="header" justifyContent="space-between" alignItems="center" paddingY="3">
-      <a href="https://umami.is" target="_blank" rel="noopener">
+      <a href="https://dermaspace.ng" target="_blank" rel="noopener">
         <Row alignItems="center" gap>
-          <Icon>
-            <Logo />
-          </Icon>
-          <Text weight="bold">umami</Text>
+          <img
+            src="/images/logo.png"
+            alt="Dermaspace"
+            style={{ height: 32, objectFit: 'contain' }}
+          />
+          <Text weight="bold" style={{ color: '#6b2d8b' }}>
+            DermaspaceNG
+          </Text>
         </Row>
       </a>
       <Row alignItems="center" gap>

@@ -43,7 +43,8 @@ export default function ({ children }) {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Umami',
-    default: 'Umami',
+    template: '%s | DermaspaceNG Analytics',
+    default: 'DermaspaceNG Analytics',
   },
+  description: 'Analytics dashboard for Dermaspace Esthetic And Wellness Centre',
 };
