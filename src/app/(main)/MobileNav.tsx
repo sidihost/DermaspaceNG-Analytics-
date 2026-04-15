@@ -5,7 +5,6 @@ import { useMessages, useNavigation } from '@/components/hooks';
 import { Globe, Grid2x2, LinkIcon } from '@/components/icons';
 import { MobileMenuButton } from '@/components/input/MobileMenuButton';
 import { NavButton } from '@/components/input/NavButton';
-import { Logo } from '@/components/svg';
 import { AdminNav } from './admin/AdminNav';
 import { SettingsNav } from './settings/SettingsNav';
 
@@ -61,10 +60,15 @@ export function MobileNav() {
           );
         }}
       </MobileMenuButton>
-      <Row alignItems="center" justifyContent="center" flexGrow={1}>
-        <IconLabel icon={<Logo />} style={{ width: 'auto' }}>
-          <Text weight="bold">umami</Text>
-        </IconLabel>
+      <Row alignItems="center" justifyContent="center" flexGrow={1} gap="2">
+        <img
+          src="/images/icon.png"
+          alt="Dermaspace"
+          style={{ width: 24, height: 24, objectFit: 'contain' }}
+        />
+        <Text weight="bold" style={{ color: '#6b2d8b' }}>
+          DermaspaceNG
+        </Text>
       </Row>
     </Grid>
   );

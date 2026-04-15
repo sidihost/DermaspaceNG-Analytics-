@@ -41,7 +41,7 @@ export function LoginForm() {
           src="/images/logo.png"
           alt="Dermaspace Logo"
           style={{
-            width: 200,
+            width: 'min(200px, 80%)',
             height: 'auto',
             objectFit: 'contain',
             marginBottom: 8,
