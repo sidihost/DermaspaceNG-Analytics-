@@ -1,18 +1,18 @@
 export const CURRENT_VERSION = process.env.currentVersion;
-export const AUTH_TOKEN = 'umami.auth';
-export const LOCALE_CONFIG = 'umami.locale';
-export const TIMEZONE_CONFIG = 'umami.timezone';
-export const DATE_RANGE_CONFIG = 'umami.date-range';
-export const THEME_CONFIG = 'umami.theme';
-export const DASHBOARD_CONFIG = 'umami.dashboard';
-export const LAST_TEAM_CONFIG = 'umami.last-team';
-export const VERSION_CHECK = 'umami.version-check';
-export const SHARE_TOKEN_HEADER = 'x-umami-share-token';
-export const HOMEPAGE_URL = 'https://umami.is';
-export const DOCS_URL = 'https://umami.is/docs';
-export const REPO_URL = 'https://github.com/umami-software/umami';
-export const UPDATES_URL = 'https://api.umami.is/v1/updates';
-export const TELEMETRY_PIXEL = 'https://i.umami.is/a.png';
+export const AUTH_TOKEN = 'dermaspace.auth';
+export const LOCALE_CONFIG = 'dermaspace.locale';
+export const TIMEZONE_CONFIG = 'dermaspace.timezone';
+export const DATE_RANGE_CONFIG = 'dermaspace.date-range';
+export const THEME_CONFIG = 'dermaspace.theme';
+export const DASHBOARD_CONFIG = 'dermaspace.dashboard';
+export const LAST_TEAM_CONFIG = 'dermaspace.last-team';
+export const VERSION_CHECK = 'dermaspace.version-check';
+export const SHARE_TOKEN_HEADER = 'x-dermaspace-share-token';
+export const HOMEPAGE_URL = 'https://dermaspace.ng';
+export const DOCS_URL = 'https://dermaspace.ng/docs';
+export const REPO_URL = 'https://github.com/sidihost/DermaspaceNG-Analytics-';
+export const UPDATES_URL = 'https://api.dermaspace.ng/v1/updates';
+export const TELEMETRY_PIXEL = 'https://i.dermaspace.ng/a.png';
 export const FAVICON_URL = 'https://icons.duckduckgo.com/ip3/{{domain}}.ico';
 export const LINKS_URL = `${globalThis?.location?.origin}/q`;
 export const PIXELS_URL = `${globalThis?.location?.origin}/p`;
@@ -183,13 +183,13 @@ export const ROLE_PERMISSIONS = {
 
 export const THEME_COLORS = {
   light: {
-    primary: '#2680eb',
+    primary: '#6b2d8b',
     text: '#838383',
     line: '#d9d9d9',
     fill: '#f9f9f9',
   },
   dark: {
-    primary: '#2680eb',
+    primary: '#8b4ca8',
     text: '#7b7b7b',
     line: '#3a3a3a',
     fill: '#191919',
@@ -197,18 +197,18 @@ export const THEME_COLORS = {
 } as const;
 
 export const CHART_COLORS = [
-  '#2680eb',
-  '#9256d9',
+  '#6b2d8b',
+  '#9b4dca',
+  '#8b4ca8',
   '#44b556',
   '#e68619',
   '#e34850',
   '#f7bd12',
   '#01bad7',
-  '#6734bc',
+  '#4a1d61',
   '#89c541',
   '#ffc301',
   '#ec1562',
-  '#ffec16',
 ];
 
 export const DOMAIN_REGEX =

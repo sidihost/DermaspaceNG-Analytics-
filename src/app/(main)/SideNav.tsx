@@ -14,8 +14,6 @@ import { Globe, Grid2x2, LinkIcon, PanelLeft } from '@/components/icons';
 import { LanguageButton } from '@/components/input/LanguageButton';
 import { NavButton } from '@/components/input/NavButton';
 import { PanelButton } from '@/components/input/PanelButton';
-import { Logo } from '@/components/svg';
-
 export function SideNav(props: SidebarProps) {
   const { formatMessage, labels } = useMessages();
   const { pathname, renderUrl, websiteId, router } = useNavigation();
@@ -52,8 +50,18 @@ export function SideNav(props: SidebarProps) {
     <Sidebar {...props} isCollapsed={isCollapsed || hasNav} backgroundColor>
       <SidebarSection onClick={() => setIsCollapsed(false)}>
         <SidebarHeader
-          label="umami"
-          icon={isCollapsed && !hasNav ? <PanelLeft /> : <Logo />}
+          label="DermaspaceNG"
+          icon={
+            isCollapsed && !hasNav ? (
+              <PanelLeft />
+            ) : (
+              <img
+                src="/images/icon.png"
+                alt="Dermaspace"
+                style={{ width: 28, height: 28, objectFit: 'contain' }}
+              />
+            )
+          }
           style={{ maxHeight: 40 }}
         >
           {!isCollapsed && !hasNav && <PanelButton />}

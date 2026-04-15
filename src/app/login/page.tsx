@@ -10,5 +10,6 @@ export default async function () {
 }
 
 export const metadata: Metadata = {
-  title: 'Login',
+  title: 'Login | DermaspaceNG Analytics',
+  description: 'Sign in to DermaspaceNG Analytics Dashboard',
 };
