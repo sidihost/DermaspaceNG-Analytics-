@@ -56,9 +56,9 @@ export function SideNav(props: SidebarProps) {
               <PanelLeft />
             ) : (
               <img
-                src="/images/logo.png"
+                src="/images/icon.png"
                 alt="Dermaspace"
-                style={{ width: 32, height: 32, objectFit: 'contain' }}
+                style={{ width: 28, height: 28, objectFit: 'contain' }}
               />
             )
           }

@@ -8,9 +8,9 @@ export function Header() {
       <a href="https://dermaspace.ng" target="_blank" rel="noopener">
         <Row alignItems="center" gap>
           <img
-            src="/images/logo.png"
+            src="/images/icon.png"
             alt="Dermaspace"
-            style={{ height: 32, objectFit: 'contain' }}
+            style={{ height: 28, objectFit: 'contain' }}
           />
           <Text weight="bold" style={{ color: '#6b2d8b' }}>
             DermaspaceNG
