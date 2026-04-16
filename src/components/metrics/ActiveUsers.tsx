@@ -33,17 +33,17 @@ export function ActiveUsers({
       variant="quiet"
       style={{
         background: 'var(--online-bg)',
-        borderRadius: '20px',
-        padding: '6px 14px',
-        transition: 'all 0.2s ease',
+        borderRadius: '6px',
+        padding: '6px 12px',
+        transition: 'all 0.15s ease',
       }}
     >
-      <StatusLight color="var(--online-color)">
+      <StatusLight color="var(--online-dot)">
         <span
           className="live-indicator"
           style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
         >
-          <Text size="2" weight="bold" style={{ color: 'var(--online-color)' }}>
+          <Text size="2" weight="medium" style={{ color: 'var(--online-color)' }}>
             {count} {formatMessage(labels.online)}
           </Text>
         </span>

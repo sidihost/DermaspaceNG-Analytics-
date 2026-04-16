@@ -3,7 +3,7 @@ import { useConfig, useLoginQuery, useMessages } from '@/components/hooks';
 import { ROLES } from '@/lib/constants';
 import { PasswordChangeButton } from './PasswordChangeButton';
 
-// Profile item wrapper with enhanced styling
+// Profile item wrapper - clean flat design
 function ProfileItem({
   label,
   children,
@@ -16,22 +16,18 @@ function ProfileItem({
   return (
     <Column
       gap="2"
+      className="settings-card"
       style={{
-        padding: 'clamp(16px, 3vw, 24px)',
-        background:
-          'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
-        borderRadius: '12px',
-        border: '1px solid var(--card-border-subtle)',
         gridColumn: fullWidth ? '1 / -1' : undefined,
       }}
     >
       <Label
         style={{
-          fontSize: 'clamp(11px, 2vw, 12px)',
-          fontWeight: 600,
+          fontSize: '12px',
+          fontWeight: 500,
           textTransform: 'uppercase',
-          letterSpacing: '0.5px',
-          opacity: 0.6,
+          letterSpacing: '0.05em',
+          color: 'var(--font-color-muted)',
         }}
       >
         {label}
@@ -72,12 +68,12 @@ export function ProfileSettings() {
     const isAdmin = value === ROLES.admin;
     return {
       display: 'inline-flex',
-      padding: '6px 14px',
-      borderRadius: '20px',
-      background: isAdmin ? 'var(--primary-color)' : 'var(--base-color-4)',
+      padding: '6px 12px',
+      borderRadius: '6px',
+      background: isAdmin ? 'var(--primary-color)' : 'var(--hover-bg)',
       color: isAdmin ? 'white' : 'var(--font-color)',
       fontSize: '13px',
-      fontWeight: 600,
+      fontWeight: 500,
     };
   };
 

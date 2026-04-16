@@ -41,11 +41,10 @@ export function MobileNav() {
       flexGrow={1}
       borderRadius
       style={{
-        background:
-          'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
-        border: '1px solid var(--card-border-subtle)',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
-        borderRadius: '12px',
+        background: 'var(--card-bg)',
+        border: '1px solid var(--card-border)',
+        boxShadow: 'var(--card-shadow)',
+        borderRadius: 'var(--card-radius)',
       }}
     >
       <MobileMenuButton>

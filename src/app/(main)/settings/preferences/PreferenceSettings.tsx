@@ -5,7 +5,7 @@ import { LanguageSetting } from './LanguageSetting';
 import { ThemeSetting } from './ThemeSetting';
 import { TimezoneSetting } from './TimezoneSetting';
 
-// Setting item wrapper with enhanced styling
+// Setting item wrapper - clean flat design
 function SettingItem({
   label,
   description,
@@ -16,21 +16,11 @@ function SettingItem({
   children: React.ReactNode;
 }) {
   return (
-    <Column
-      gap="3"
-      style={{
-        padding: 'clamp(16px, 3vw, 24px)',
-        background:
-          'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
-        borderRadius: '12px',
-        border: '1px solid var(--card-border-subtle)',
-        transition: 'all 0.2s ease',
-      }}
-    >
+    <Column gap="3" className="settings-card">
       <Column gap="1">
         <Label
           style={{
-            fontSize: 'clamp(13px, 2.5vw, 15px)',
+            fontSize: '14px',
             fontWeight: 600,
             color: 'var(--font-color)',
           }}
@@ -41,8 +31,8 @@ function SettingItem({
           <Text
             size="1"
             style={{
-              opacity: 0.6,
-              lineHeight: 1.4,
+              color: 'var(--font-color-muted)',
+              lineHeight: 1.5,
             }}
           >
             {description}

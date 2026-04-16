@@ -44,22 +44,20 @@ export const MetricCard = ({
       justifyContent="space-between"
       className="metric-card-enhanced"
       style={{
-        padding: 'clamp(12px, 3vw, 20px)',
-        borderRadius: '12px',
-        minHeight: 'clamp(100px, 15vw, 130px)',
-        gap: '8px',
+        padding: 'clamp(14px, 3vw, 20px)',
+        minHeight: 'clamp(110px, 18vw, 140px)',
+        gap: '10px',
       }}
     >
       <Row alignItems="center" justifyContent="space-between" gap="2">
         {showLabel && (
           <Text
-            weight="bold"
             wrap="nowrap"
             style={{
-              fontSize: 'clamp(11px, 2vw, 13px)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
-              opacity: 0.7,
+              fontSize: 'clamp(12px, 2vw, 13px)',
+              fontWeight: 500,
+              color: 'var(--font-color-muted)',
+              letterSpacing: '0.01em',
             }}
           >
             {label}
@@ -68,10 +66,10 @@ export const MetricCard = ({
         {icon && (
           <div
             style={{
-              opacity: 0.5,
+              color: 'var(--primary-color)',
+              opacity: 0.6,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
             {icon}
@@ -84,16 +82,17 @@ export const MetricCard = ({
         wrap="nowrap"
         className="metric-value-gradient"
         style={{
-          fontSize: 'clamp(24px, 5vw, 36px)',
-          lineHeight: 1.1,
+          fontSize: 'clamp(28px, 6vw, 42px)',
+          lineHeight: 1,
           fontVariantNumeric: 'tabular-nums',
+          letterSpacing: '-0.02em',
         }}
       >
         <AnimatedDiv title={value?.toString()}>{props?.x?.to(x => formatValue(x))}</AnimatedDiv>
       </Text>
 
       {showChange && (
-        <Row alignItems="center" style={{ marginTop: '4px' }}>
+        <Row alignItems="center">
           <ChangeLabel value={change} title={formatValue(change)} reverseColors={reverseColors}>
             <AnimatedDiv>{changeProps?.x?.to(x => `${Math.abs(~~x)}%`)}</AnimatedDiv>
           </ChangeLabel>

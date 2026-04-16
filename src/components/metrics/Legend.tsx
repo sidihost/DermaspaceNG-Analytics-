@@ -14,7 +14,7 @@ export function Legend({
   }
 
   return (
-    <Row gap="3" wrap="wrap" justifyContent="center" style={{ padding: '8px 0' }}>
+    <Row gap="3" wrap="wrap" justifyContent="center" style={{ padding: '12px 0' }}>
       {items.map(item => {
         const { text, fillStyle, hidden } = item;
         const color = colord(fillStyle);
@@ -25,11 +25,11 @@ export function Legend({
             onClick={() => onClick(item)}
             style={{
               cursor: 'pointer',
-              padding: '6px 12px',
-              borderRadius: '20px',
-              background: hidden ? 'transparent' : 'var(--base-color-3)',
-              transition: 'all 0.2s ease',
-              opacity: hidden ? 0.5 : 1,
+              padding: '6px 10px',
+              borderRadius: '6px',
+              background: hidden ? 'transparent' : 'var(--hover-bg)',
+              transition: 'all 0.15s ease',
+              opacity: hidden ? 0.4 : 1,
             }}
           >
             <StatusLight color={color.alpha(color.alpha() + 0.2).toHex()}>
@@ -38,7 +38,7 @@ export function Legend({
                 weight="medium"
                 color={hidden ? 'disabled' : undefined}
                 truncate={true}
-                style={{ maxWidth: '200px' }}
+                style={{ maxWidth: '180px' }}
               >
                 {text}
               </Text>
