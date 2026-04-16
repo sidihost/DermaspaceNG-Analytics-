@@ -43,7 +43,11 @@ export function Funnel({ id, name, type, parameters, websiteId }) {
                   <Dialog
                     title={formatMessage(labels.funnel)}
                     variant="modal"
-                    style={{ minHeight: 300, minWidth: 400 }}
+                    style={{
+                      width: '95vw',
+                      maxWidth: '600px',
+                      minHeight: 'auto',
+                    }}
                   >
                     <FunnelEditForm id={id} websiteId={websiteId} onClose={close} />
                   </Dialog>

@@ -87,26 +87,23 @@ export function FunnelEditForm({
             <Grid gap>
               {fields.map(({ id }: { id: string }, index: number) => {
                 return (
-                  <Grid key={id} columns="260px 1fr auto" gap>
-                    <Column>
-                      <FormField
-                        name={`steps.${index}.type`}
-                        rules={{ required: formatMessage(labels.required) }}
-                      >
-                        <ActionSelect />
-                      </FormField>
-                    </Column>
-                    <Column>
-                      <FormField
-                        name={`steps.${index}.value`}
-                        rules={{ required: formatMessage(labels.required) }}
-                      >
-                        {({ field, context }) => {
-                          const type = context.watch(`steps.${index}.type`);
-                          return <LookupField websiteId={websiteId} type={type} {...field} />;
-                        }}
-                      </FormField>
-                    </Column>
+                  <Grid key={id} columns={{ xs: '1fr auto', sm: '180px 1fr auto' }} gap="2">
+                    <FormField
+                      name={`steps.${index}.type`}
+                      rules={{ required: formatMessage(labels.required) }}
+                    >
+                      <ActionSelect />
+                    </FormField>
+                    <FormField
+                      name={`steps.${index}.value`}
+                      rules={{ required: formatMessage(labels.required) }}
+                      style={{ gridColumn: { xs: '1', sm: 'auto' } }}
+                    >
+                      {({ field, context }) => {
+                        const type = context.watch(`steps.${index}.type`);
+                        return <LookupField websiteId={websiteId} type={type} {...field} />;
+                      }}
+                    </FormField>
                     <Button onPress={() => remove(index)}>
                       <Icon size="sm">
                         <X />

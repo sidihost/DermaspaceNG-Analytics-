@@ -66,27 +66,23 @@ export function GoalEditForm({
             >
               <TextField autoFocus />
             </FormField>
-            <Column>
+            <Column gap="3">
               <Label>{formatMessage(labels.action)}</Label>
-              <Grid columns="260px 1fr" gap>
-                <Column>
-                  <FormField
-                    name="parameters.type"
-                    rules={{ required: formatMessage(labels.required) }}
-                  >
-                    <ActionSelect />
-                  </FormField>
-                </Column>
-                <Column>
-                  <FormField
-                    name="parameters.value"
-                    rules={{ required: formatMessage(labels.required) }}
-                  >
-                    {({ field }) => {
-                      return <LookupField websiteId={websiteId} type={type} {...field} />;
-                    }}
-                  </FormField>
-                </Column>
+              <Grid columns={{ xs: '1fr', sm: '200px 1fr' }} gap="3">
+                <FormField
+                  name="parameters.type"
+                  rules={{ required: formatMessage(labels.required) }}
+                >
+                  <ActionSelect />
+                </FormField>
+                <FormField
+                  name="parameters.value"
+                  rules={{ required: formatMessage(labels.required) }}
+                >
+                  {({ field }) => {
+                    return <LookupField websiteId={websiteId} type={type} {...field} />;
+                  }}
+                </FormField>
               </Grid>
             </Column>
 
