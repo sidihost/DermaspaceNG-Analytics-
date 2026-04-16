@@ -12,18 +12,18 @@ html body {
   --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
   --card-radius: 10px;
 
-  /* Status Colors - Green/Red for actual status, Purple for brand accents */
-  --status-positive-bg: rgba(22, 163, 74, 0.1);
-  --status-positive-color: #16a34a;
-  --status-negative-bg: rgba(220, 38, 38, 0.1);
-  --status-negative-color: #dc2626;
+  /* Status Colors - All using brand purple */
+  --status-positive-bg: rgba(107, 45, 139, 0.1);
+  --status-positive-color: #6b2d8b;
+  --status-negative-bg: rgba(107, 45, 139, 0.08);
+  --status-negative-color: #8b4ca8;
   --status-neutral-bg: var(--base-color-3);
   --status-neutral-color: var(--font-color-muted);
 
-  /* Online indicator - Use green for "online" status */
-  --online-bg: rgba(22, 163, 74, 0.1);
-  --online-color: #16a34a;
-  --online-dot: #16a34a;
+  /* Online indicator - Brand purple */
+  --online-bg: rgba(107, 45, 139, 0.1);
+  --online-color: #6b2d8b;
+  --online-dot: #6b2d8b;
 
   /* Interactive states */
   --hover-bg: var(--base-color-3);
@@ -38,14 +38,14 @@ html body[data-theme="dark"] {
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.25);
 
-  --status-positive-bg: rgba(34, 197, 94, 0.15);
-  --status-positive-color: #22c55e;
-  --status-negative-bg: rgba(239, 68, 68, 0.15);
-  --status-negative-color: #ef4444;
+  --status-positive-bg: rgba(139, 76, 168, 0.15);
+  --status-positive-color: #a855f7;
+  --status-negative-bg: rgba(139, 76, 168, 0.1);
+  --status-negative-color: #c084fc;
 
-  --online-bg: rgba(34, 197, 94, 0.15);
-  --online-color: #22c55e;
-  --online-dot: #22c55e;
+  --online-bg: rgba(139, 76, 168, 0.15);
+  --online-color: #a855f7;
+  --online-dot: #a855f7;
 
   --hover-bg: var(--base-color-4);
   --active-bg: rgba(168, 85, 247, 0.15);
