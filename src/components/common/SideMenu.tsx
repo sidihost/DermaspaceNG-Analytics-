@@ -45,16 +45,21 @@ export function SideMenu({
           <NavMenuItem
             isSelected={isSelected}
             style={{
-              borderRadius: '10px',
-              padding: '10px 14px',
-              transition: 'all 0.2s ease',
-              background: isSelected
-                ? 'linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%)'
-                : 'transparent',
-              color: isSelected ? 'white' : undefined,
+              borderRadius: '6px',
+              padding: '8px 12px',
+              transition: 'background 0.15s ease',
+              background: isSelected ? 'var(--base-color-3)' : 'transparent',
+              fontWeight: isSelected ? 500 : 400,
             }}
           >
-            <IconLabel icon={icon}>{label}</IconLabel>
+            <IconLabel
+              icon={icon}
+              style={{
+                color: isSelected ? 'var(--primary-color)' : 'var(--font-color)',
+              }}
+            >
+              {label}
+            </IconLabel>
           </NavMenuItem>
         </Link>
       );
@@ -62,25 +67,24 @@ export function SideMenu({
   };
 
   return (
-    <Column gap="4" overflowY="auto" justifyContent="space-between" position="sticky" top="20px">
+    <Column gap="3" overflowY="auto" justifyContent="space-between" position="sticky" top="20px">
       {title && (
-        <Row padding="2">
+        <Row paddingX="2" paddingY="1">
           <Heading
             size="1"
             style={{
-              fontSize: 'clamp(16px, 3vw, 20px)',
-              fontWeight: 700,
-              background: 'var(--metric-value-gradient)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              fontSize: '13px',
+              fontWeight: 600,
+              color: 'var(--font-color-muted)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
             }}
           >
             {title}
           </Heading>
         </Row>
       )}
-      <NavMenu gap="4" {...props}>
+      <NavMenu gap="2" {...props}>
         {items?.map(({ label, items }, index) => {
           if (label) {
             return (

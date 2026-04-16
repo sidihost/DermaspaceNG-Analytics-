@@ -34,7 +34,12 @@ export function LoginForm() {
       justifyContent="center"
       alignItems="center"
       gap="6"
-      style={{ width: '100%', maxWidth: 400, padding: '0 24px' }}
+      style={{
+        width: '100%',
+        maxWidth: '400px',
+        padding: '0 20px',
+        margin: '0 auto',
+      }}
     >
       <Column alignItems="center" gap="3">
         <img

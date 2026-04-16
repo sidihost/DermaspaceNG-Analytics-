@@ -9,13 +9,12 @@ export function SettingsLayout({ children }: { children: ReactNode }) {
     <Grid columns={{ xs: '1fr', lg: 'auto 1fr' }} width="100%" height="100%">
       <Column
         display={{ xs: 'none', lg: 'flex' }}
-        width="260px"
+        width="240px"
         height="100%"
         marginRight="2"
         padding="4"
         style={{
-          background: 'linear-gradient(180deg, var(--card-gradient-start) 0%, transparent 100%)',
-          borderRight: '1px solid var(--card-border-subtle)',
+          borderRight: '1px solid var(--card-border)',
         }}
       >
         <SettingsNav />

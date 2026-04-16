@@ -68,9 +68,16 @@ export function ListTable({
 
   return (
     <Column gap>
-      <Grid alignItems="center" justifyContent="space-between" paddingLeft="2" columns="1fr 100px">
-        <Text weight="bold">{title}</Text>
-        <Text weight="bold" align="center">
+      <Grid
+        alignItems="center"
+        justifyContent="space-between"
+        paddingLeft="2"
+        columns={{ xs: '1fr 80px', sm: '1fr 100px' }}
+      >
+        <Text weight="bold" style={{ fontSize: 'clamp(13px, 2.5vw, 14px)' }}>
+          {title}
+        </Text>
+        <Text weight="bold" align="center" style={{ fontSize: 'clamp(12px, 2vw, 14px)' }}>
           {metric}
         </Text>
       </Grid>
@@ -112,15 +119,15 @@ const AnimatedRow = ({
 
   return (
     <Grid
-      columns="1fr 50px 50px"
+      columns={{ xs: '1fr 45px 40px', sm: '1fr 50px 50px' }}
       paddingLeft="2"
       alignItems="center"
       hoverBackgroundColor="2"
       borderRadius
-      gap
+      gap="2"
     >
-      <Row alignItems="center">
-        <Text truncate={true} style={{ maxWidth: isPhone ? '200px' : '400px' }}>
+      <Row alignItems="center" style={{ overflow: 'hidden' }}>
+        <Text truncate={true} style={{ maxWidth: '100%' }}>
           {label}
         </Text>
       </Row>

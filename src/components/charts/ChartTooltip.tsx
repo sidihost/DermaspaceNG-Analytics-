@@ -15,15 +15,16 @@ export function ChartTooltip({
       <Column
         gap="2"
         style={{
-          padding: '8px 12px',
-          borderRadius: '10px',
-          backdropFilter: 'blur(12px)',
-          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
+          padding: '10px 14px',
+          borderRadius: '8px',
+          background: 'var(--card-bg)',
+          border: '1px solid var(--card-border)',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         }}
       >
         {title && (
           <Row alignItems="center">
-            <Text size="1" style={{ opacity: 0.7, fontWeight: 500 }}>
+            <Text size="1" style={{ color: 'var(--font-color-muted)', fontWeight: 500 }}>
               {title}
             </Text>
           </Row>

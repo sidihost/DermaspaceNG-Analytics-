@@ -29,12 +29,11 @@ const fullscreenStyles = {
 } as any;
 
 const panelStyles = {
-  background:
-    'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
-  borderColor: 'var(--card-border-subtle)',
+  background: 'var(--card-bg)',
+  borderColor: 'var(--card-border)',
   boxShadow: 'var(--card-shadow)',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  borderRadius: '16px',
+  transition: 'border-color 0.15s ease',
+  borderRadius: 'var(--card-radius)',
 } as any;
 
 export function Panel({ title, allowFullscreen, style, children, ...props }: PanelProps) {

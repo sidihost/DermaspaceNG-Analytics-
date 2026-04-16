@@ -17,8 +17,8 @@ export function ThemeSetting() {
           justifyContent: 'center',
           gap: '8px',
           padding: '10px 16px',
-          borderRadius: '10px',
-          transition: 'all 0.2s ease',
+          borderRadius: '8px',
+          transition: 'all 0.15s ease',
         }}
       >
         <Icon>
@@ -37,8 +37,8 @@ export function ThemeSetting() {
           justifyContent: 'center',
           gap: '8px',
           padding: '10px 16px',
-          borderRadius: '10px',
-          transition: 'all 0.2s ease',
+          borderRadius: '8px',
+          transition: 'all 0.15s ease',
         }}
       >
         <Icon>

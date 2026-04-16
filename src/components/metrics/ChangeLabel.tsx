@@ -28,21 +28,7 @@ export function ChangeLabel({
   };
 
   return (
-    <Row
-      {...props}
-      className={getClassName()}
-      alignItems="center"
-      alignSelf="flex-start"
-      gap="1"
-      style={{
-        borderRadius: '20px',
-        padding: '4px 10px',
-        fontSize: '12px',
-        fontWeight: 600,
-        display: 'inline-flex',
-        transition: 'all 0.2s ease',
-      }}
-    >
+    <Row {...props} className={getClassName()} alignItems="center" alignSelf="flex-start" gap="1">
       {!neutral && (
         <Icon rotate={positive ? -90 : 90} size={size || 'xs'}>
           <ArrowRight />

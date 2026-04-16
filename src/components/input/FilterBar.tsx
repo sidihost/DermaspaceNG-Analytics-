@@ -102,7 +102,14 @@ export function FilterBar({ websiteId }: { websiteId: string }) {
             </TooltipTrigger>
           )}
           <Modal>
-            <Dialog title={formatMessage(labels.segment)} style={{ width: 800, minHeight: 300 }}>
+            <Dialog
+              title={formatMessage(labels.segment)}
+              style={{
+                width: '95vw',
+                maxWidth: '800px',
+                minHeight: 'auto',
+              }}
+            >
               {({ close }) => {
                 return <SegmentEditForm websiteId={websiteId} onClose={close} filters={filters} />;
               }}

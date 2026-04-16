@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family), system-ui, -apple-system, sans-serif;
   color: var(--font-color);
   font-size: var(--font-size);
   background-color: var(--base-color-2);
@@ -21,83 +21,60 @@ a:hover {
   text-decoration: none;
 }
 
+/* Modern Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  background: transparent;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  border: 3px solid rgba(0, 0, 0, 0);
-  background-color: var(--base-color-3);
-  background-clip: padding-box;
-  border-radius: 10px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 3px solid rgba(0, 0, 0, 0);
-  background-color: var(--base-color-7);
-  border-radius: 10px;
-  background-clip: padding-box;
-  transition: background-color 0.2s ease;
+  background-color: var(--base-color-6);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--primary-color-light);
-  background-clip: padding-box;
+  background-color: var(--primary-color);
 }
 
-/* Enhanced Metric Card Styles */
+/* ============================================
+   METRIC CARDS - Clean Flat Design
+   ============================================ */
 .metric-card-enhanced {
-  background: linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
-  border: 1px solid var(--card-border-subtle);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.metric-card-enhanced::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--metric-value-gradient);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.15s ease;
 }
 
 .metric-card-enhanced:hover {
+  border-color: var(--primary-color);
   box-shadow: var(--card-shadow-hover);
-  transform: translateY(-2px);
-  border-color: var(--primary-color-light);
 }
 
-.metric-card-enhanced:hover::before {
-  opacity: 1;
-}
-
-/* Metric Value with Gradient */
+/* Metric value - solid color, no gradient */
 .metric-value-gradient {
-  background: var(--metric-value-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-color);
 }
 
-/* Chart Container Enhancement */
+/* ============================================
+   CHART CONTAINER - Minimal Clean Style
+   ============================================ */
 .chart-container-enhanced {
-  background: var(--glass-background);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: clamp(16px, 4vw, 24px);
   box-shadow: var(--card-shadow);
 }
 
-/* Responsive Grid for Metrics */
+/* ============================================
+   METRICS GRID - Responsive Layout
+   ============================================ */
 .metrics-grid-responsive {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -107,46 +84,56 @@ a:hover {
 @media (min-width: 640px) {
   .metrics-grid-responsive {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 14px;
   }
 }
 
 @media (min-width: 1024px) {
   .metrics-grid-responsive {
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 16px;
   }
 }
 
-/* Change Label Enhancements - Brand Colors */
+/* ============================================
+   CHANGE LABELS - Brand Purple
+   ============================================ */
 .change-label-positive {
-  background: var(--success-light);
-  color: var(--success-color);
-  border-radius: 20px;
-  padding: 4px 10px;
+  background: rgba(107, 45, 139, 0.1);
+  color: var(--primary-color);
+  border-radius: 6px;
+  padding: 4px 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .change-label-negative {
-  background: var(--danger-light);
-  color: var(--danger-color);
-  border-radius: 20px;
-  padding: 4px 10px;
+  background: rgba(107, 45, 139, 0.08);
+  color: var(--primary-color-light);
+  border-radius: 6px;
+  padding: 4px 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .change-label-neutral {
   background: var(--base-color-3);
   color: var(--font-color-muted);
-  border-radius: 20px;
-  padding: 4px 10px;
+  border-radius: 6px;
+  padding: 4px 8px;
   font-size: 12px;
   font-weight: 500;
 }
 
-/* Animation for metrics loading */
+/* ============================================
+   LOADING STATES
+   ============================================ */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -159,25 +146,94 @@ a:hover {
 .metric-loading {
   background: linear-gradient(
     90deg,
-    var(--base-color-3) 25%,
+    var(--base-color-3) 0%,
     var(--base-color-4) 50%,
-    var(--base-color-3) 75%
+    var(--base-color-3) 100%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--card-radius);
 }
 
-/* Pulse animation for live data indicator */
-@keyframes pulse {
+/* ============================================
+   LIVE INDICATOR
+   ============================================ */
+@keyframes pulse-dot {
   0%,
   100% {
     opacity: 1;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.6;
+    transform: scale(0.95);
   }
 }
 
 .live-indicator {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ============================================
+   SETTINGS CARDS
+   ============================================ */
+.settings-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: clamp(16px, 4vw, 20px);
+  transition: border-color 0.15s ease;
+}
+
+.settings-card:hover {
+  border-color: var(--base-color-6);
+}
+
+/* ============================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================ */
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-color-light);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--font-color);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--hover-bg);
+  border-color: var(--base-color-6);
+}
+
+/* ============================================
+   NAV ITEMS
+   ============================================ */
+.nav-item-active {
+  background: var(--active-bg);
+  color: var(--primary-color);
+  border-radius: 8px;
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }

@@ -58,11 +58,14 @@ export function SideNav(props: SidebarProps) {
               <img
                 src="/images/icon.png"
                 alt="Dermaspace"
-                style={{ width: 28, height: 28, objectFit: 'contain' }}
+                style={{ width: 26, height: 26, objectFit: 'contain' }}
               />
             )
           }
-          style={{ maxHeight: 40 }}
+          style={{
+            maxHeight: 40,
+            fontWeight: 600,
+          }}
         >
           {!isCollapsed && !hasNav && <PanelButton />}
         </SidebarHeader>
