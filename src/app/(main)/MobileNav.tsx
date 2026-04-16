@@ -39,12 +39,9 @@ export function MobileNav() {
     <Grid
       columns="auto 1fr"
       flexGrow={1}
-      borderRadius
       style={{
-        background: 'var(--card-bg)',
-        border: '1px solid var(--card-border)',
-        boxShadow: 'var(--card-shadow)',
-        borderRadius: 'var(--card-radius)',
+        background: 'var(--background-color)',
+        borderBottom: '1px solid var(--base-color-4)',
       }}
     >
       <MobileMenuButton>

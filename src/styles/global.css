@@ -97,10 +97,11 @@ a:hover {
 
 /* ============================================
    CHANGE LABELS - Clean Pills
+   Use green/red for positive/negative, not brand purple
    ============================================ */
 .change-label-positive {
-  background: var(--status-positive-bg);
-  color: var(--status-positive-color);
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 12px;
@@ -111,8 +112,8 @@ a:hover {
 }
 
 .change-label-negative {
-  background: var(--status-negative-bg);
-  color: var(--status-negative-color);
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 12px;
@@ -123,8 +124,8 @@ a:hover {
 }
 
 .change-label-neutral {
-  background: var(--status-neutral-bg);
-  color: var(--status-neutral-color);
+  background: var(--base-color-3);
+  color: var(--font-color-muted);
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 12px;

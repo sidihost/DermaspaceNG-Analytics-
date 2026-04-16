@@ -45,15 +45,21 @@ export function SideMenu({
           <NavMenuItem
             isSelected={isSelected}
             style={{
-              borderRadius: '8px',
-              padding: '10px 12px',
-              transition: 'all 0.15s ease',
-              background: isSelected ? 'var(--active-bg)' : 'transparent',
-              color: isSelected ? 'var(--primary-color)' : undefined,
+              borderRadius: '6px',
+              padding: '8px 12px',
+              transition: 'background 0.15s ease',
+              background: isSelected ? 'var(--base-color-3)' : 'transparent',
               fontWeight: isSelected ? 500 : 400,
             }}
           >
-            <IconLabel icon={icon}>{label}</IconLabel>
+            <IconLabel
+              icon={icon}
+              style={{
+                color: isSelected ? 'var(--primary-color)' : 'var(--font-color)',
+              }}
+            >
+              {label}
+            </IconLabel>
           </NavMenuItem>
         </Link>
       );
@@ -63,14 +69,15 @@ export function SideMenu({
   return (
     <Column gap="3" overflowY="auto" justifyContent="space-between" position="sticky" top="20px">
       {title && (
-        <Row padding="2">
+        <Row paddingX="2" paddingY="1">
           <Heading
             size="1"
             style={{
-              fontSize: '18px',
+              fontSize: '13px',
               fontWeight: 600,
-              color: 'var(--primary-color)',
-              letterSpacing: '-0.01em',
+              color: 'var(--font-color-muted)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
             }}
           >
             {title}
