@@ -42,7 +42,18 @@ export function SideMenu({
 
       return (
         <Link key={id} href={path}>
-          <NavMenuItem isSelected={isSelected}>
+          <NavMenuItem
+            isSelected={isSelected}
+            style={{
+              borderRadius: '10px',
+              padding: '10px 14px',
+              transition: 'all 0.2s ease',
+              background: isSelected
+                ? 'linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%)'
+                : 'transparent',
+              color: isSelected ? 'white' : undefined,
+            }}
+          >
             <IconLabel icon={icon}>{label}</IconLabel>
           </NavMenuItem>
         </Link>
@@ -51,13 +62,25 @@ export function SideMenu({
   };
 
   return (
-    <Column gap overflowY="auto" justifyContent="space-between" position="sticky" top="20px">
+    <Column gap="4" overflowY="auto" justifyContent="space-between" position="sticky" top="20px">
       {title && (
-        <Row padding>
-          <Heading size="1">{title}</Heading>
+        <Row padding="2">
+          <Heading
+            size="1"
+            style={{
+              fontSize: 'clamp(16px, 3vw, 20px)',
+              fontWeight: 700,
+              background: 'var(--metric-value-gradient)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            {title}
+          </Heading>
         </Row>
       )}
-      <NavMenu gap="6" {...props}>
+      <NavMenu gap="4" {...props}>
         {items?.map(({ label, items }, index) => {
           if (label) {
             return (

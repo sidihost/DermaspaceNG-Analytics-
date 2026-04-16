@@ -17,7 +17,7 @@ export function WebsitePanels({ websiteId }: { websiteId: string }) {
     showMore: true,
     metric: formatMessage(labels.visitors),
   };
-  const rowProps = { minHeight: '570px' };
+  const rowProps = { minHeight: 'clamp(400px, 60vw, 570px)' };
   const isSharePage = pathname.includes('/share/');
 
   return (

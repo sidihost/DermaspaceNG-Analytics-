@@ -22,7 +22,14 @@ export function WebsiteChart({
 
   const chartData = useMemo(() => {
     if (data) {
-      const result = {
+      const result: {
+        pageviews: any[];
+        sessions: any[];
+        compare?: {
+          pageviews: any[];
+          sessions: any[];
+        };
+      } = {
         pageviews,
         sessions,
       };
@@ -46,6 +53,20 @@ export function WebsiteChart({
     }
     return { pageviews: [], sessions: [] };
   }, [data, startDate, endDate, unit]);
+
+  // Loading skeleton for chart
+  if (isLoading) {
+    return (
+      <div
+        className="metric-loading chart-container-enhanced"
+        style={{
+          height: 'clamp(280px, 40vw, 400px)',
+          borderRadius: '16px',
+          width: '100%',
+        }}
+      />
+    );
+  }
 
   return (
     <LoadingPanel data={data} isFetching={isFetching} isLoading={isLoading} error={error}>

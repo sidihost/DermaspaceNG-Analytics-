@@ -22,7 +22,7 @@ export function TimezoneSetting() {
   };
 
   return (
-    <Row gap>
+    <Row gap="2" wrap="wrap" style={{ width: '100%' }}>
       <Select
         value={timezone}
         onChange={(value: any) => saveTimezone(value)}
@@ -30,6 +30,10 @@ export function TimezoneSetting() {
         onSearch={setSearch}
         onOpenChange={handleOpen}
         listProps={{ style: { maxHeight: 300 } }}
+        style={{
+          flex: '1 1 200px',
+          minWidth: '150px',
+        }}
       >
         {items.map((item: any) => (
           <ListItem key={item} id={item}>
@@ -38,7 +42,15 @@ export function TimezoneSetting() {
         ))}
         {!items.length && <ListItem></ListItem>}
       </Select>
-      <Button onPress={handleReset}>{formatMessage(labels.reset)}</Button>
+      <Button
+        onPress={handleReset}
+        style={{
+          borderRadius: '10px',
+          padding: '10px 16px',
+        }}
+      >
+        {formatMessage(labels.reset)}
+      </Button>
     </Row>
   );
 }

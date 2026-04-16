@@ -53,6 +53,17 @@ export function BarChart({
   const chartOptions: any = useMemo(() => {
     return {
       __id: Date.now(),
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
       scales: {
         x: {
           type: XAxisType,
@@ -67,13 +78,18 @@ export function BarChart({
             display: false,
           },
           border: {
-            color: colors.chart.line,
+            display: false,
           },
           ticks: {
             color: colors.chart.text,
-            autoSkip: false,
+            autoSkip: true,
             maxRotation: 0,
             callback: renderXLabel,
+            font: {
+              size: 11,
+              weight: 500,
+            },
+            padding: 8,
           },
         },
         y: {
@@ -82,19 +98,25 @@ export function BarChart({
           beginAtZero: true,
           stacked: !!stacked,
           grid: {
-            color: colors.chart.line,
+            color: theme === 'dark' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.05)',
+            drawBorder: false,
           },
           border: {
-            color: colors.chart.line,
+            display: false,
           },
           ticks: {
             color: colors.chart.text,
             callback: renderYLabel || renderNumberLabels,
+            font: {
+              size: 11,
+              weight: 500,
+            },
+            padding: 12,
           },
         },
       },
     };
-  }, [chartData, colors, unit, stacked, renderXLabel, renderYLabel]);
+  }, [chartData, colors, unit, stacked, renderXLabel, renderYLabel, theme]);
 
   const handleTooltip = ({ tooltip }: { tooltip: any }) => {
     const { opacity, labelColors, dataPoints } = tooltip;

@@ -20,9 +20,17 @@ export function DateRangeSetting() {
   };
 
   return (
-    <Row gap="3">
+    <Row gap="2" wrap="wrap" style={{ width: '100%' }}>
       <DateFilter value={date} onChange={handleChange} placement="bottom start" />
-      <Button onPress={handleReset}>{formatMessage(labels.reset)}</Button>
+      <Button
+        onPress={handleReset}
+        style={{
+          borderRadius: '10px',
+          padding: '10px 16px',
+        }}
+      >
+        {formatMessage(labels.reset)}
+      </Button>
     </Row>
   );
 }

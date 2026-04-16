@@ -184,31 +184,31 @@ export const ROLE_PERMISSIONS = {
 export const THEME_COLORS = {
   light: {
     primary: '#6b2d8b',
-    text: '#838383',
-    line: '#d9d9d9',
-    fill: '#f9f9f9',
+    text: '#64748b',
+    line: '#e2e8f0',
+    fill: '#f8fafc',
   },
   dark: {
-    primary: '#8b4ca8',
-    text: '#7b7b7b',
-    line: '#3a3a3a',
-    fill: '#191919',
+    primary: '#a855f7',
+    text: '#94a3b8',
+    line: '#334155',
+    fill: '#0f172a',
   },
 } as const;
 
 export const CHART_COLORS = [
-  '#6b2d8b',
-  '#9b4dca',
-  '#8b4ca8',
-  '#44b556',
-  '#e68619',
-  '#e34850',
-  '#f7bd12',
-  '#01bad7',
-  '#4a1d61',
-  '#89c541',
-  '#ffc301',
-  '#ec1562',
+  '#6b2d8b', // Primary purple
+  '#8b4ca8', // Light purple
+  '#9b4dca', // Accent purple
+  '#4a1d61', // Dark purple
+  '#c77dff', // Soft purple
+  '#e0aaff', // Pale purple
+  '#5a189a', // Deep purple
+  '#7b2cbf', // Vivid purple
+  '#9d4edd', // Medium purple
+  '#d8b4fe', // Lavender
+  '#a855f7', // Bright purple
+  '#c084fc', // Light violet
 ];
 
 export const DOMAIN_REGEX =

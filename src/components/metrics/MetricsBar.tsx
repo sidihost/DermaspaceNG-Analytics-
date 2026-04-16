@@ -1,4 +1,4 @@
-import { Grid, type GridProps } from '@umami/react-zen';
+import type { GridProps } from '@umami/react-zen';
 import type { ReactNode } from 'react';
 
 export interface MetricsBarProps extends GridProps {
@@ -7,8 +7,14 @@ export interface MetricsBarProps extends GridProps {
 
 export function MetricsBar({ children, ...props }: MetricsBarProps) {
   return (
-    <Grid columns="repeat(auto-fit, minmax(160px, 1fr))" gap {...props}>
+    <div
+      className="metrics-grid-responsive"
+      style={{
+        width: '100%',
+      }}
+      {...props}
+    >
       {children}
-    </Grid>
+    </div>
   );
 }
