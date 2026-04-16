@@ -197,18 +197,18 @@ export const THEME_COLORS = {
 } as const;
 
 export const CHART_COLORS = [
-  '#6b2d8b',
-  '#a855f7',
-  '#c084fc',
-  '#10b981',
-  '#f59e0b',
-  '#ef4444',
-  '#06b6d4',
-  '#3b82f6',
-  '#8b5cf6',
-  '#ec4899',
-  '#14b8a6',
-  '#f97316',
+  '#6b2d8b', // Primary purple
+  '#8b4ca8', // Light purple
+  '#9b4dca', // Accent purple
+  '#4a1d61', // Dark purple
+  '#c77dff', // Soft purple
+  '#e0aaff', // Pale purple
+  '#5a189a', // Deep purple
+  '#7b2cbf', // Vivid purple
+  '#9d4edd', // Medium purple
+  '#d8b4fe', // Lavender
+  '#a855f7', // Bright purple
+  '#c084fc', // Light violet
 ];
 
 export const DOMAIN_REGEX =

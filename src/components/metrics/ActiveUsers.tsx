@@ -32,18 +32,18 @@ export function ActiveUsers({
       href={`/websites/${websiteId}/realtime`}
       variant="quiet"
       style={{
-        background: 'var(--success-light)',
+        background: 'var(--online-bg)',
         borderRadius: '20px',
         padding: '6px 14px',
         transition: 'all 0.2s ease',
       }}
     >
-      <StatusLight variant="success">
+      <StatusLight color="var(--online-color)">
         <span
           className="live-indicator"
           style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
         >
-          <Text size="2" weight="bold" style={{ color: '#16a34a' }}>
+          <Text size="2" weight="bold" style={{ color: 'var(--online-color)' }}>
             {count} {formatMessage(labels.online)}
           </Text>
         </span>
