@@ -2,21 +2,6 @@ import { Icon, Row, type RowProps, Text } from '@umami/react-zen';
 import type { ReactNode } from 'react';
 import { ArrowRight } from '@/components/icons';
 
-const STYLES = {
-  positive: {
-    color: `var(--success-color)`,
-    background: `color-mix(in srgb, var(--success-color), var(--background-color) 95%)`,
-  },
-  negative: {
-    color: `var(--danger-color)`,
-    background: `color-mix(in srgb, var(--danger-color), var(--background-color) 95%)`,
-  },
-  neutral: {
-    color: `var(--font-color-muted)`,
-    background: `var(--base-color-2)`,
-  },
-};
-
 export function ChangeLabel({
   value,
   size,
@@ -31,30 +16,39 @@ export function ChangeLabel({
   showPercentage?: boolean;
   children?: ReactNode;
 } & RowProps) {
-  const positive = value >= 0;
+  const positive = value > 0;
   const negative = value < 0;
   const neutral = value === 0 || Number.isNaN(value);
   const good = reverseColors ? negative : positive;
 
-  const style =
-    STYLES[good && 'positive'] || STYLES[!good && 'negative'] || STYLES[neutral && 'neutral'];
+  const getClassName = () => {
+    if (neutral) return 'change-label-neutral';
+    if (good) return 'change-label-positive';
+    return 'change-label-negative';
+  };
 
   return (
     <Row
       {...props}
-      style={style}
+      className={getClassName()}
       alignItems="center"
       alignSelf="flex-start"
-      paddingX="2"
-      paddingY="1"
-      gap="2"
+      gap="1"
+      style={{
+        borderRadius: '20px',
+        padding: '4px 10px',
+        fontSize: '12px',
+        fontWeight: 600,
+        display: 'inline-flex',
+        transition: 'all 0.2s ease',
+      }}
     >
       {!neutral && (
-        <Icon rotate={positive ? -90 : 90} size={size}>
+        <Icon rotate={positive ? -90 : 90} size={size || 'xs'}>
           <ArrowRight />
         </Icon>
       )}
-      <Text>{children || value}</Text>
+      <Text style={{ fontSize: 'inherit', fontWeight: 'inherit' }}>{children || value}</Text>
     </Row>
   );
 }

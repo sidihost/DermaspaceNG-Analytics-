@@ -28,11 +28,25 @@ export function ActiveUsers({
   }
 
   return (
-    <LinkButton href={`/websites/${websiteId}/realtime`} variant="quiet">
+    <LinkButton
+      href={`/websites/${websiteId}/realtime`}
+      variant="quiet"
+      style={{
+        background: 'var(--success-light)',
+        borderRadius: '20px',
+        padding: '6px 14px',
+        transition: 'all 0.2s ease',
+      }}
+    >
       <StatusLight variant="success">
-        <Text size="2" weight="medium">
-          {count} {formatMessage(labels.online)}
-        </Text>
+        <span
+          className="live-indicator"
+          style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+        >
+          <Text size="2" weight="bold" style={{ color: '#16a34a' }}>
+            {count} {formatMessage(labels.online)}
+          </Text>
+        </span>
       </StatusLight>
     </LinkButton>
   );

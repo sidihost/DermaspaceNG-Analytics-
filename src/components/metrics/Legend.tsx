@@ -14,19 +14,31 @@ export function Legend({
   }
 
   return (
-    <Row gap wrap="wrap" justifyContent="center">
+    <Row gap="3" wrap="wrap" justifyContent="center" style={{ padding: '8px 0' }}>
       {items.map(item => {
         const { text, fillStyle, hidden } = item;
         const color = colord(fillStyle);
 
         return (
-          <Row key={text} onClick={() => onClick(item)}>
+          <Row
+            key={text}
+            onClick={() => onClick(item)}
+            style={{
+              cursor: 'pointer',
+              padding: '6px 12px',
+              borderRadius: '20px',
+              background: hidden ? 'transparent' : 'var(--base-color-3)',
+              transition: 'all 0.2s ease',
+              opacity: hidden ? 0.5 : 1,
+            }}
+          >
             <StatusLight color={color.alpha(color.alpha() + 0.2).toHex()}>
               <Text
                 size="2"
+                weight="medium"
                 color={hidden ? 'disabled' : undefined}
                 truncate={true}
-                style={{ maxWidth: '300px' }}
+                style={{ maxWidth: '200px' }}
               >
                 {text}
               </Text>

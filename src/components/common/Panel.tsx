@@ -25,6 +25,16 @@ const fullscreenStyles = {
   left: 0,
   border: 'none',
   zIndex: 9999,
+  background: 'var(--background-color)',
+} as any;
+
+const panelStyles = {
+  background:
+    'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
+  borderColor: 'var(--card-border-subtle)',
+  boxShadow: 'var(--card-shadow)',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  borderRadius: '16px',
 } as any;
 
 export function Panel({ title, allowFullscreen, style, children, ...props }: PanelProps) {
@@ -37,17 +47,29 @@ export function Panel({ title, allowFullscreen, style, children, ...props }: Pan
 
   return (
     <Column
-      paddingY="6"
+      paddingY={{ xs: '4', md: '6' }}
       paddingX={{ xs: '3', md: '6' }}
       border
-      borderRadius="3"
-      backgroundColor
       position="relative"
       gap
       {...props}
-      style={{ ...style, ...(isFullscreen ? fullscreenStyles : {}) }}
+      style={{
+        ...panelStyles,
+        ...style,
+        ...(isFullscreen ? fullscreenStyles : {}),
+      }}
     >
-      {title && <Heading>{title}</Heading>}
+      {title && (
+        <Heading
+          style={{
+            fontSize: 'clamp(14px, 3vw, 16px)',
+            fontWeight: 600,
+            letterSpacing: '-0.01em',
+          }}
+        >
+          {title}
+        </Heading>
+      )}
       {allowFullscreen && (
         <Row justifyContent="flex-end" alignItems="center">
           <TooltipTrigger delay={0} isDisabled={isFullscreen}>

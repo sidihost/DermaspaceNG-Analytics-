@@ -4,4 +4,43 @@ html body {
   --primary-color-dark: #4a1d61;
   --primary-font-color: var(--light-color);
   --accent-color: #9b4dca;
+
+  /* Enhanced Dashboard Colors */
+  --card-gradient-start: rgba(107, 45, 139, 0.08);
+  --card-gradient-end: rgba(155, 77, 202, 0.04);
+  --card-border-subtle: rgba(107, 45, 139, 0.15);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(107, 45, 139, 0.08);
+  --card-shadow-hover: 0 4px 16px rgba(107, 45, 139, 0.15), 0 8px 32px rgba(107, 45, 139, 0.1);
+  --metric-value-gradient: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 100%
+  );
+
+  /* Chart Colors - Vibrant yet Professional */
+  --chart-primary: #6b2d8b;
+  --chart-secondary: #9b4dca;
+  --chart-tertiary: #c77dff;
+  --chart-accent: #e0aaff;
+
+  /* Status Colors */
+  --success-light: rgba(34, 197, 94, 0.12);
+  --danger-light: rgba(239, 68, 68, 0.12);
+
+  /* Glass Effect */
+  --glass-background: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme="dark"] body,
+html body[data-theme="dark"] {
+  --card-gradient-start: rgba(139, 76, 168, 0.12);
+  --card-gradient-end: rgba(155, 77, 202, 0.06);
+  --card-border-subtle: rgba(139, 76, 168, 0.25);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover: 0 4px 16px rgba(139, 76, 168, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+  --glass-background: rgba(30, 30, 35, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --success-light: rgba(34, 197, 94, 0.15);
+  --danger-light: rgba(239, 68, 68, 0.15);
 }

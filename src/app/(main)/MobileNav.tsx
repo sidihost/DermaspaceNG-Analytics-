@@ -36,7 +36,18 @@ export function MobileNav() {
   ];
 
   return (
-    <Grid columns="auto 1fr" flexGrow={1} backgroundColor="3" borderRadius>
+    <Grid
+      columns="auto 1fr"
+      flexGrow={1}
+      borderRadius
+      style={{
+        background:
+          'linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%)',
+        border: '1px solid var(--card-border-subtle)',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+        borderRadius: '12px',
+      }}
+    >
       <MobileMenuButton>
         {({ close }) => {
           return (
@@ -66,7 +77,7 @@ export function MobileNav() {
           alt="Dermaspace"
           style={{ width: 24, height: 24, objectFit: 'contain' }}
         />
-        <Text weight="bold" style={{ color: '#6b2d8b' }}>
+        <Text weight="bold" style={{ color: 'var(--primary-color)' }}>
           DermaspaceNG
         </Text>
       </Row>

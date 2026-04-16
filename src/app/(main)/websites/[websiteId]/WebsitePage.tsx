@@ -1,7 +1,6 @@
 'use client';
 import { Column } from '@umami/react-zen';
 import { ExpandedViewModal } from '@/app/(main)/websites/[websiteId]/ExpandedViewModal';
-import { Panel } from '@/components/common/Panel';
 import { WebsiteChart } from './WebsiteChart';
 import { WebsiteControls } from './WebsiteControls';
 import { WebsiteMetricsBar } from './WebsiteMetricsBar';
@@ -9,13 +8,29 @@ import { WebsitePanels } from './WebsitePanels';
 
 export function WebsitePage({ websiteId }: { websiteId: string }) {
   return (
-    <Column gap>
+    <Column
+      gap="4"
+      style={{
+        paddingBottom: 'clamp(16px, 4vw, 32px)',
+      }}
+    >
       <WebsiteControls websiteId={websiteId} />
-      <WebsiteMetricsBar websiteId={websiteId} showChange={true} />
-      <Panel minHeight="520px">
+
+      {/* Metrics Cards Section */}
+      <section style={{ marginTop: '8px' }}>
+        <WebsiteMetricsBar websiteId={websiteId} showChange={true} />
+      </section>
+
+      {/* Chart Section */}
+      <section style={{ marginTop: '8px' }}>
         <WebsiteChart websiteId={websiteId} />
-      </Panel>
-      <WebsitePanels websiteId={websiteId} />
+      </section>
+
+      {/* Panels Section */}
+      <section style={{ marginTop: '8px' }}>
+        <WebsitePanels websiteId={websiteId} />
+      </section>
+
       <ExpandedViewModal websiteId={websiteId} />
     </Column>
   );

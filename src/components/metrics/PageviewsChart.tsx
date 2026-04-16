@@ -27,6 +27,8 @@ export function PageviewsChart({ data, unit, minDate, maxDate, ...props }: Pagev
   const chartData: any = useMemo(() => {
     if (!data) return;
 
+    const isDark = theme === 'dark';
+
     return {
       __id: Date.now(),
       datasets: [
@@ -34,20 +36,26 @@ export function PageviewsChart({ data, unit, minDate, maxDate, ...props }: Pagev
           type: 'bar',
           label: formatMessage(labels.visitors),
           data: generateTimeSeries(data.sessions, minDate, maxDate, unit, dateLocale),
-          borderWidth: 1,
-          barPercentage: 0.9,
-          categoryPercentage: 0.9,
-          ...colors.chart.visitors,
+          borderWidth: 0,
+          barPercentage: 0.75,
+          categoryPercentage: 0.85,
+          borderRadius: 6,
+          borderSkipped: false,
+          backgroundColor: isDark ? 'rgba(168, 85, 247, 0.8)' : 'rgba(107, 45, 139, 0.7)',
+          hoverBackgroundColor: isDark ? 'rgba(168, 85, 247, 1)' : 'rgba(107, 45, 139, 0.9)',
           order: 3,
         },
         {
           type: 'bar',
           label: formatMessage(labels.views),
           data: generateTimeSeries(data.pageviews, minDate, maxDate, unit, dateLocale),
-          barPercentage: 0.9,
-          categoryPercentage: 0.9,
-          borderWidth: 1,
-          ...colors.chart.views,
+          barPercentage: 0.75,
+          categoryPercentage: 0.85,
+          borderWidth: 0,
+          borderRadius: 6,
+          borderSkipped: false,
+          backgroundColor: isDark ? 'rgba(192, 132, 252, 0.5)' : 'rgba(155, 77, 202, 0.4)',
+          hoverBackgroundColor: isDark ? 'rgba(192, 132, 252, 0.8)' : 'rgba(155, 77, 202, 0.7)',
           order: 4,
         },
         ...(data.compare
@@ -63,8 +71,14 @@ export function PageviewsChart({ data, unit, minDate, maxDate, ...props }: Pagev
                   dateLocale,
                 ),
                 borderWidth: 2,
-                backgroundColor: '#8601B0',
-                borderColor: '#8601B0',
+                backgroundColor: 'transparent',
+                borderColor: '#a855f7',
+                pointBackgroundColor: '#a855f7',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.4,
                 order: 1,
               },
               {
@@ -72,27 +86,35 @@ export function PageviewsChart({ data, unit, minDate, maxDate, ...props }: Pagev
                 label: `${formatMessage(labels.visitors)} (${formatMessage(labels.previous)})`,
                 data: generateTimeSeries(data.compare.sessions, minDate, maxDate, unit, dateLocale),
                 borderWidth: 2,
-                backgroundColor: '#f15bb5',
-                borderColor: '#f15bb5',
+                backgroundColor: 'transparent',
+                borderColor: '#ec4899',
+                pointBackgroundColor: '#ec4899',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.4,
                 order: 2,
               },
             ]
           : []),
       ],
     };
-  }, [data, locale]);
+  }, [data, locale, theme]);
 
   const renderXLabel = useCallback(renderDateLabels(unit, locale), [unit, locale]);
 
   return (
-    <BarChart
-      {...props}
-      chartData={chartData}
-      unit={unit}
-      minDate={minDate}
-      maxDate={maxDate}
-      renderXLabel={renderXLabel}
-      height="400px"
-    />
+    <div className="chart-container-enhanced" style={{ width: '100%' }}>
+      <BarChart
+        {...props}
+        chartData={chartData}
+        unit={unit}
+        minDate={minDate}
+        maxDate={maxDate}
+        renderXLabel={renderXLabel}
+        height="clamp(280px, 40vw, 400px)"
+      />
+    </div>
   );
 }
